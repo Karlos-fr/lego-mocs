@@ -1,29 +1,21 @@
 # Île du Trésor Oublié
 
-Le modèle actuel est **[Ile_du_Tresor_Oublie_V3_6_bricklink.io](Ile_du_Tresor_Oublie_V3_6_bricklink.io)** : 391 pièces, 76 combinaisons pièce/couleur, base de 20 × 18 tenons. C'est le seul IO dans le dossier principal.
+Ouvrir **[Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie.io)** dans BrickLink Studio. Le modèle contient 391 pièces et 76 combinaisons pièce/couleur, sur une base de 20 × 18 tenons.
 
-- `apercus/` : vues avant, arrière et dessous du socle.
-- `inventaires/` : liste des pièces et XML BrickLink. Coller le XML dans « Upload BrickLink XML format » ; le TXT contient le même texte prêt à copier.
-- `rapports/` : contrôles et relevés de disponibilité. Les notes historiques décrivent parfois le fichier avant sa correction d'import ; le contrôle d'inventaire porte sur le IO corrigé.
-- `scripts/` : outils de rendu, géométrie et appuis, avec dépendances Python `numpy` et `Pillow` et bibliothèque Studio installée.
-- `archives/` : anciennes versions, IO V3.6 avant correction, diagnostics et scripts de transformation conservés pour référence.
+![Aperçu du modèle](Ile_du_Tresor_Oublie_apercu.png)
 
-Les scripts archivés utilisent les noms et emplacements de leur époque. Ils ne doivent pas être lancés tels quels depuis le dossier principal ; adapter leurs chemins dans une copie de travail avant de les réutiliser.
+Pour alimenter une Wanted List, importer directement ce IO sur BrickLink. Le fichier comprend les correspondances BrickLink dans `model2.ldr`. Aucun inventaire séparé n'est nécessaire pour cet usage.
 
-## Vérifier l'inventaire
+## Scripts utiles
 
-Depuis ce dossier :
+`scripts/` conserve les outils de géométrie, de rendu et d'analyse des appuis. Ils nécessitent Python, `numpy`, `Pillow` et la bibliothèque locale de Studio.
 
-```powershell
-python ../.agents/skills/lego-moc/scripts/check_inventory.py Ile_du_Tresor_Oublie_V3_6_bricklink.io --inventory inventaires/Ile_du_Tresor_Oublie_V3_6_pieces.csv --xml inventaires/Ile_du_Tresor_Oublie_V3_6_wanted_list.xml
-```
-
-## Générer un aperçu
+Depuis ce dossier, régénérer l'aperçu :
 
 ```powershell
 python scripts/render_moc.py
 ```
 
-Sans argument, le script lit le IO actuel et écrit `Ile_du_Tresor_Oublie_V3_6_bricklink_apercu.png` à côté. Un chemin IO peut aussi être fourni en argument. Ce rendu simplifie l'éclairage et les matériaux ; il ne valide pas les connexions ni les collisions dans Studio.
+Le script lit le IO ci-dessus et écrit `Ile_du_Tresor_Oublie_apercu.png` à côté. Un autre chemin IO peut être fourni en argument. Le rendu simplifie l'éclairage et les matériaux et ne constitue pas une validation native des collisions ou de la stabilité.
 
-L'import effectif sur BrickLink, la validation native Studio et la construction physique restent à confirmer.
+Les archives, anciens aperçus, inventaires séparés et rapports ont été retirés du dossier de travail. Leur historique versionné reste disponible dans Git. La validation native Studio et la construction physique restent à confirmer.
