@@ -18,7 +18,7 @@ Ouvrir [Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.io). 
 
 ![Aperçu de l'île](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie_apercu.png)
 
-Le dossier conserve le modèle, cet aperçu, son guide et les scripts utiles. L'historique des versions précédentes et des anciens documents est disponible dans Git.
+Le dossier conserve le modèle, cet aperçu, son guide ; les scripts utiles sont partag?s dans le skill. L'historique des versions précédentes et des anciens documents est disponible dans Git.
 
 Les contrôles locaux ont validé la cohérence des inventaires et fichiers internes avant le retrait des inventaires séparés. La validation native de stabilité/collision et la construction physique restent à confirmer.
 
@@ -29,3 +29,13 @@ Les contrôles locaux ont validé la cohérence des inventaires et fichiers inte
 - Le [guide de l'île](Ile_du_Tresor_Oublie/README.md) explique l'utilisation du modèle et la génération de son aperçu.
 
 Le vérificateur du skill reste disponible pour les futures modifications, avec un inventaire de travail si nécessaire ; il n'est pas requis pour importer le IO actuel sur BrickLink.
+
+## Outils réutilisables pour les MOC
+
+```powershell
+python .agents/skills/lego-moc/scripts/render_moc.py chemin/modele.io --view front
+python .agents/skills/lego-moc/scripts/audit_moc.py chemin/modele.io
+python .agents/skills/lego-moc/scripts/support_audit.py chemin/modele.io
+```
+
+Les outils de géométrie lisent les IO/LDR/MPD et leurs sous-modèles. Les archives IO chiffrées et les pièces personnalisées absentes de la bibliothèque nécessitent un export compatible. Le contrôle d'inventaire BrickLink reste limité aux modèles plats. L'analyse des appuis est une aide à l'inspection, pas une validation native Studio.

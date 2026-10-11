@@ -12,6 +12,17 @@ Identifier la version de référence, l'encombrement et les usages (exposition, 
 
 Utiliser les bibliothèques Studio effectivement indexées lorsqu'elles sont disponibles : des variantes officielles et non officielles du même nom peuvent avoir des points de connexion différents. Des boîtes englobantes ne prouvent ni une collision réelle, ni un emboîtement. Distinguer rendu, analyse approximative, vérification native Studio et construction physique.
 
+## Outils partagés de géométrie
+Les scripts `scripts/audit_moc.py`, `scripts/render_moc.py` et `scripts/support_audit.py` sont indépendants des projets. Ils prennent le chemin du modèle en argument et `--studio` pour une installation différente. Le lecteur accepte IO/LDR/MPD et compose les transformations et couleurs héritées des sous-modèles. Les archives chiffrées et géométries personnalisées absentes de la bibliothèque ne sont pas prises en charge : signaler ces limites, demander un export LDraw compatible si nécessaire.
+
+Exemple depuis la racine du dépôt :
+```powershell
+python .agents/skills/lego-moc/scripts/render_moc.py chemin/modele.io --view back --output chemin/arriere.png
+python .agents/skills/lego-moc/scripts/audit_moc.py chemin/modele.io
+python .agents/skills/lego-moc/scripts/support_audit.py chemin/modele.io
+```
+Le rendu accepte `--size` (pixels, minimum 200). L'audit mesure l'encombrement de l'ensemble, pas la taille de sa base. L'analyse des appuis inspecte toutes les pièces et rapporte uniquement l'absence de contact vertical détecté ; elle ignore notamment les clips et connexions latérales. Ne pas l'utiliser comme preuve de constructibilité.
+
 ## Fichiers et achat
 Lire [references/studio-bricklink.md](references/studio-bricklink.md) pour générer un IO, un inventaire, ou diagnostiquer un import BrickLink. La séparation LDraw/BrickLink des couleurs et identifiants est essentielle.
 

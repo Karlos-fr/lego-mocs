@@ -4,12 +4,15 @@ from pathlib import Path
 import re
 import numpy as np
 from PIL import Image, ImageDraw
-from audit_moc import ROOT, parse, resolve
+import audit_moc
+from audit_moc import parse, resolve
 
 COLORS = {}
-for line in (ROOT/'LDConfig.ldr').read_text().splitlines():
-    m = re.search(r'CODE\s+(\d+)\s+VALUE\s+#([0-9A-Fa-f]{6})', line)
-    if m: COLORS[int(m[1])] = tuple(bytes.fromhex(m[2]))
+def load_colors():
+    COLORS.clear()
+    for line in (audit_moc.ROOT/'LDConfig.ldr').read_text().splitlines():
+        m = re.search(r'CODE\s+(\d+)\s+VALUE\s+#([0-9A-Fa-f]{6})', line)
+        if m: COLORS[int(m[1])] = tuple(bytes.fromhex(m[2]))
 
 @lru_cache(None)
 def mesh(ref):
@@ -33,6 +36,7 @@ def mesh(ref):
     return (np.concatenate(faces),np.concatenate(colors)) if faces else (np.empty((0,3,3)),np.empty(0,int))
 
 def render(parts,path,view='front',size=(1100,1100)):
+    if not COLORS: load_colors()
     allfaces,allcolors=[],[]
     for p in parts:
         f,c=mesh(p['ref']); allfaces.append(f@p['m'].T+p['p']);allcolors.append(np.where(c==16,p['color'],c))
@@ -73,7 +77,15 @@ def render(parts,path,view='front',size=(1100,1100)):
     print(path,'triangles',len(f))
 
 if __name__=='__main__':
-    import sys
-    from audit_moc import SOURCE
-    source=Path(sys.argv[1]) if len(sys.argv)>1 else SOURCE
-    render(parse(source),source.with_name(source.stem+'_apercu.png'))
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('model',type=Path)
+    parser.add_argument('--output',type=Path)
+    parser.add_argument('--view',choices=['front','back','bottom'],default='front')
+    parser.add_argument('--size',type=int,default=1100)
+    parser.add_argument('--studio',type=Path,default=audit_moc.DEFAULT_STUDIO)
+    args=parser.parse_args()
+    if args.size<200: parser.error('--size must be at least 200')
+    audit_moc.configure(args.studio)
+    output=args.output or args.model.with_name(args.model.stem+'_apercu.png')
+    render(parse(args.model),output,view=args.view,size=(args.size,args.size))

@@ -22,7 +22,6 @@ def supports(ps):
     world=[[(q['m']@s+q['p']) for s in studs(q['ref'])] for q in ps]
     result=[]
     for i,p in enumerate(ps):
-        if not 11<=p['section']<=21:continue
         lo,hi=bounds(p);bottom=hi[1]
         contacts=[]
         for j,ss in enumerate(world):
@@ -34,8 +33,14 @@ def supports(ps):
     return result
 
 if __name__=='__main__':
-    import sys
-    from audit_moc import SOURCE
-    ps=parse(Path(sys.argv[1]) if len(sys.argv)>1 else SOURCE)
+    import argparse
+    import audit_moc
+    parser=argparse.ArgumentParser(description='Approximate vertical stud contacts; absence is not proof of a floating part.')
+    parser.add_argument('model',type=Path)
+    parser.add_argument('--studio',type=Path,default=audit_moc.DEFAULT_STUDIO)
+    args=parser.parse_args()
+    audit_moc.configure(args.studio)
+    ps=parse(args.model)
+    print('Heuristic only: misses clips, side connections, angled parts and unsupported stud variants; includes base parts.')
     for p,c in supports(ps):
-        if not c:print('UNSUPPORTED',p['index'],p['section'],p['ref'],p['p'])
+        if not c:print('NO_VERTICAL_STUD_CONTACT',p['index'],p['ref'],p['p'])
