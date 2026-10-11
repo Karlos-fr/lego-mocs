@@ -10,7 +10,7 @@ Modèles personnels créés avec BrickLink Studio, aperçus et outils de vérifi
 - [Portail Nether](Portail_Nether_V4_Centre_Transparent.io)
 - [Wagon tombereau](Wagon_Tombereau_V2_1_Fond_Brun_Lisse.io)
 
-Le modèle Mariah Carey a été contrôlé : deux combinaisons pièce/couleur non répertoriées et un torse personnalisé sont détaillés dans son guide. Les trois autres modèles n'ont pas encore été audités ici.
+Le modèle Mariah Carey a été amélioré et contrôlé : 187 pièces, visage et cheveux remplacés par des combinaisons catalogue, torse LEGO existant, pose de chant et décor rouge et doré. Les limites de validation sont détaillées dans son guide. Les trois autres modèles n'ont pas encore été audités ici.
 
 ## Île du Trésor
 
