@@ -16,7 +16,7 @@ Les fichiers des quatre derniers modèles sont conservés tels quels ; leurs inv
 
 Ouvrir [Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.io). Le modèle comprend **391 pièces et 76 combinaisons référence/couleur**, sur une base de 20 × 18 tenons. Ce IO comporte les correspondances BrickLink nécessaires à son import en Wanted List.
 
-![Aperçu de l'île](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie_apercu.png)
+![Rendu Studio original de l'île](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.png)
 
 Le dossier conserve le modèle, cet aperçu, son guide ; les scripts utiles sont partag?s dans le skill. L'historique des versions précédentes et des anciens documents est disponible dans Git.
 

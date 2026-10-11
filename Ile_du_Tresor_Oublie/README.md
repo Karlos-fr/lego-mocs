@@ -2,7 +2,9 @@
 
 Ouvrir **[Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie.io)** dans BrickLink Studio. Le modèle contient 391 pièces et 76 combinaisons pièce/couleur, sur une base de 20 × 18 tenons.
 
-![Aperçu du modèle](Ile_du_Tresor_Oublie_apercu.png)
+![Rendu Studio original](Ile_du_Tresor_Oublie.png)
+
+`Ile_du_Tresor_Oublie.png` est le rendu Studio original restauré depuis l'historique. `Ile_du_Tresor_Oublie_apercu.png` est l'aperçu du IO actuel produit par le script, sans texte ajouté. Le rendu original peut représenter une version antérieure du modèle.
 
 Pour alimenter une Wanted List, importer directement ce IO sur BrickLink. Le fichier comprend les correspondances BrickLink dans `model2.ldr`. Aucun inventaire séparé n'est nécessaire pour cet usage.
 

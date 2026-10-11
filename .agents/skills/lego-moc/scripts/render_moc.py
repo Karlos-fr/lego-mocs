@@ -3,7 +3,7 @@ from functools import lru_cache
 from pathlib import Path
 import re
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image
 import audit_moc
 from audit_moc import parse, resolve
 
@@ -71,8 +71,7 @@ def render(parts,path,view='front',size=(1100,1100)):
         db=depth[top:bottom+1,left:rightmost+1]
         mask=(u>=-1e-6)&(v>=-1e-6)&(w>=-1e-6)&(z>db)
         db[mask]=z[mask];pixels[top:bottom+1,left:rightmost+1][mask]=rgb[i].astype(np.uint8)
-    img=Image.fromarray(pixels);draw=ImageDraw.Draw(img)
-    draw.text((22,20),'Apercu des pieces du fichier - rendu hors Studio',fill=(50,65,80))
+    img=Image.fromarray(pixels)
     img.save(path)
     print(path,'triangles',len(f))
 
