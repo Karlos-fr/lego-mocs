@@ -1,0 +1,47 @@
+﻿L'ÎLE DU TRÉSOR OUBLIÉ — V3.4 — NEIGE
+
+Base conservée : 20 × 18 tenons, environ 16 × 14,4 cm.
+Les versions précédentes sont conservées. Travail réalisé par fichiers et scripts, sans pilotage de Studio.
+
+RECHERCHE
+BrickNerd : le constructeur de « A Snowy Journey to the North Pole » combine des tuiles rondes, en D et en quart de rond sur les branches pour varier la couverture de neige. Cette technique inspire les petites touches sur les palmes.
+https://tommy-williamson-cerb.squarespace.com/home/a-study-in-perspective-a-snowy-journey-to-the-north-pole-1-10-24
+
+Full Plate Builds, « Winter Landscape » : le constructeur recherche une couverture lisse et continue, avec peu de texture. Ce principe inspire les contours bas de la plage.
+https://fullplatebuilds.com/2018/04/10/winter-landscape/
+
+Les références ci-dessous sont mes choix d'adaptation au MOC. Les articles ne donnent pas cette liste exacte de pièces.
+
+PIÈCES RETENUES EN BLANC
+1126 — Tuile ovale 1 × 2 : contours bas de la plage.
+https://www.bricklink.com/v2/catalog/catalogitem.page?P=1126
+24246 — Tuile en D 1 × 1 : accumulations asymétriques sur les palmes.
+https://www.bricklink.com/catalogItemIn.asp?P=24246&colorID=1&in=A
+98138 — Tuile ronde 1 × 1 : petites touches complémentaires sur les palmes.
+https://www.bricklink.com/v2/catalog/catalogitem.page?P=98138
+3563 — Pente à double courbure 1 × 2 × 2/3 : petites congères, avec une plaque blanche 3023 dessous.
+https://www.bricklink.com/catalogItemIn.asp?P=3563&in=S
+79757 — Pente à double courbure d'angle 2 × 2 × 2/3 : accumulations sur les rochers, avec une plaque blanche 3022 dessous. Présente en blanc dans le set 41757.
+https://www.bricklink.com/catalogItemInv.asp?S=41757-1
+
+Autre option étudiée, non ajoutée : 49307, double courbure 1 × 1 × 2/3, pour une congère d'un tenon.
+https://www.bricklink.com/v2/catalog/catalogitem.page?C=1&P=49307
+
+MODIFICATIONS
+Les 14 pentes blanches 11477 et les 3 pentes 15068 sont retirées.
+La plage reçoit des tuiles ovales sur ses plaques blanches existantes.
+Les corniches et le ponton reçoivent des doubles courbures 3563 sur une plaque blanche 1 × 2. Ces assemblages sont relevés d'une épaisseur de plaque.
+Les sommets reçoivent des angles courbes 79757 sur une plaque blanche 2 × 2.
+Les six tuiles rectangulaires 1 × 2 des palmiers sont retirées. Chaque palmier reçoit deux tuiles en D et deux tuiles rondes, réparties asymétriquement sur des tenons existants.
+La structure de la V3.3 est conservée.
+
+CONTRÔLES
+Toutes les combinaisons référence/couleur du fichier sont retrouvées dans les données de Studio ou dans les vérifications de catalogue déjà réalisées. Les nouvelles références blanches figurent dans les données d'éléments installées avec Studio.
+Le CSV contient l'inventaire actualisé. Le JSON détaille les vérifications de base, doublons, corps rectangulaires et intégrité du fichier.
+Les aperçus sont calculés depuis la géométrie des pièces, hors Studio, avec des couleurs simplifiées et sans transparence réaliste.
+Les contrôles natifs de connexion, collision et stabilité dans Studio ne sont pas exécutés. Ces vérifications par scripts ne constituent pas une validation complète de la construction physique.
+Un fichier .ldr est aussi fourni pour import dans Studio.
+
+REPRODUCTION
+python refine_snow.py
+python verify_moc.py Ile_du_Tresor_Oublie_V3_4

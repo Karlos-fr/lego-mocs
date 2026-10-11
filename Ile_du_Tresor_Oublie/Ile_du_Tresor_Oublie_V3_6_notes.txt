@@ -1,0 +1,25 @@
+﻿V3.6 — Neige, rochers et structure
+
+La base garde son empreinte de 20 × 18 tenons, environ 16 × 14,4 cm.
+Deux plaques bleues 2 × 2 du socle sont remplacées par une plaque 2 × 4 qui traverse leur joint ; les autres pièces originales du socle sont conservées. Une couche inférieure de quatorze plaques, dont des plaques 6 × 8 et 2 × 8, relie ses joints. Le socle gagne une épaisseur de plaque, soit environ 3,2 mm.
+
+NEIGE
+Les volumes répétitifs à double courbure et les pièces d'angle à tenon visible sont retirés des rochers. Une plaque blanche 1 × 4 relie les sommets centraux et porte une nappe à bouts arrondis. Les autres sommets reçoivent des contours ovales plus bas. Les corniches reçoivent de petites touches en D sur leurs tenons. Une couverture de tuiles blanches ferme les surfaces libres du toit et de la plage, sans empiéter sur les accessoires, la grotte ou les bases des palmiers. La neige des palmes garde ses douze attaches vérifiées.
+
+ROCHERS
+L'arrière reçoit deux niveaux de pentes, avec un mélange limité de gris clair et foncé. La paroi intérieure de la grotte reste fermée, sa profondeur et son sol continu sont conservés. Le haut du mur est reconstruit avec des joints décalés.
+
+STRUCTURE
+Quatorze plaques relient le dessous du socle. Les trois palmiers reposent sur une plaque de montage d'un seul tenant : 2 × 2 pour les deux pieds au sol, 2 × 4 pour celui sur le rocher. Les arbres sont relevés d'une épaisseur de plaque pour permettre ces fixations. La plaque centrale de neige sert aussi à relier les deux sommets.
+
+CONTRÔLES
+Les scripts utilisent la géométrie référencée par l'index de Studio. Ils vérifient les références et couleurs dans les données disponibles, les supports de la grotte, les douze attaches de neige des palmiers, les corps rectangulaires, les interfaces du toit, l'intégrité du fichier et le maintien de l'empreinte du socle. Un contrôle supplémentaire vérifie les liaisons entre les plaques du socle et les trois surfaces de montage des palmiers.
+
+Les aperçus avant, arrière et dessous du socle utilisent la géométrie des pièces avec des couleurs simplifiées. Aucun pilotage de Studio n'a été réalisé. La stabilité physique et les collisions complètes restent à contrôler dans Studio ; la disponibilité chez les vendeurs n'a pas été vérifiée.
+
+Reproduction :
+python improve_landscape.py
+python verify_moc.py Ile_du_Tresor_Oublie_V3_6
+python verify_structure.py
+
+

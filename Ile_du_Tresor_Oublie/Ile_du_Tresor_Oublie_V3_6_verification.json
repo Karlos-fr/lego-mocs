@@ -1,0 +1,100 @@
+{
+  "source_sha256": "06548a9071693fe038be226f110eea4a97336bcbcba2d75be4b6ab49f9a8e9a4",
+  "original_parts": 362,
+  "new_parts": 391,
+  "base_studs": [
+    20,
+    18
+  ],
+  "base_unchanged": false,
+  "base_footprint_unchanged": true,
+  "original_base_parts_preserved": false,
+  "catalog_combinations": 76,
+  "unverified_combinations": [],
+  "native_studio_validation": false,
+  "snow_changes": {
+    "upper_blue_joint_plates_replaced": 2,
+    "foundation_plates_added": 14,
+    "palm_mounting_plates_added": 3,
+    "rear_rock_facets_added": 4,
+    "roof_snow_studs_covered": 21,
+    "beach_snow_studs_covered": 30
+  },
+  "studio_indexed_geometry": true,
+  "cave_parts_without_stud_plane_support": [],
+  "palm_snow_verified_against_actual_stud_centers": 12,
+  "palm_snow_stud_contacts_checked": 12,
+  "cave_floor_covered_studs": 20,
+  "exact_duplicates": 0,
+  "rectangular_parts_checked": 212,
+  "rectangular_solid_overlaps": [],
+  "roof_envelope_interferences_over_4_1_LDU": [],
+  "archive_integrity": true,
+  "model_records_match": true,
+  "source_preserved": true,
+  "validation_scope": "Rectangular bodies and new roof envelopes; not a complete connector or curved-part collision simulation.",
+  "foundation_connected_components": 1,
+  "foundation_bridges": [
+    {
+      "part": "3036.dat",
+      "water_plates_linked": 12
+    },
+    {
+      "part": "3036.dat",
+      "water_plates_linked": 12
+    },
+    {
+      "part": "3036.dat",
+      "water_plates_linked": 12
+    },
+    {
+      "part": "3034.dat",
+      "water_plates_linked": 4
+    },
+    {
+      "part": "3034.dat",
+      "water_plates_linked": 4
+    },
+    {
+      "part": "3020.dat",
+      "water_plates_linked": 2
+    },
+    {
+      "part": "3020.dat",
+      "water_plates_linked": 2
+    },
+    {
+      "part": "3020.dat",
+      "water_plates_linked": 2
+    },
+    {
+      "part": "3022.dat",
+      "water_plates_linked": 1
+    },
+    {
+      "part": "3022.dat",
+      "water_plates_linked": 1
+    },
+    {
+      "part": "3022.dat",
+      "water_plates_linked": 1
+    },
+    {
+      "part": "3020.dat",
+      "water_plates_linked": 2
+    },
+    {
+      "part": "3022.dat",
+      "water_plates_linked": 1
+    },
+    {
+      "part": "3020.dat",
+      "water_plates_linked": 2
+    }
+  ],
+  "palm_mounts_checked": [
+    22,
+    26,
+    30
+  ]
+}

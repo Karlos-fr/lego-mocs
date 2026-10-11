@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+# Exports personnels et diagnostics avec chemins locaux
+*_wanted_list_export_utilisateur.xml
+*_diagnostic_import.json
+validation_skill_lego_moc.json
