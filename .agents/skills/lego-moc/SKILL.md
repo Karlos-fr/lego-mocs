@@ -13,7 +13,7 @@ Identifier la version de référence, l'encombrement et les usages (exposition, 
 Utiliser les bibliothèques Studio effectivement indexées lorsqu'elles sont disponibles : des variantes officielles et non officielles du même nom peuvent avoir des points de connexion différents. Des boîtes englobantes ne prouvent ni une collision réelle, ni un emboîtement. Distinguer rendu, analyse approximative, vérification native Studio et construction physique.
 
 ## Outils partagés de géométrie
-Les scripts `scripts/audit_moc.py`, `scripts/render_moc.py` et `scripts/support_audit.py` sont indépendants des projets. Ils prennent le chemin du modèle en argument et `--studio` pour une installation différente. Le lecteur accepte IO/LDR/MPD et compose les transformations et couleurs héritées des sous-modèles. Les archives chiffrées et géométries personnalisées absentes de la bibliothèque ne sont pas prises en charge : signaler ces limites, demander un export LDraw compatible si nécessaire.
+Les scripts `scripts/audit_moc.py`, `scripts/render_moc.py` et `scripts/support_audit.py` sont indépendants des projets. Ils prennent le chemin du modèle en argument et `--studio` pour une installation différente. Le lecteur accepte IO/LDR/MPD et compose les transformations et couleurs héritées des sous-modèles. Le rendu peut charger les DAT embarqués dans `CustomParts/` dans un dossier temporaire, sans les installer dans Studio ; utiliser `mount_embedded(source)` lors d'un appel Python direct. Les archives chiffrées, textures et géométries absentes ne sont pas prises en charge. Une pièce personnalisée rendue ne devient pas une référence BrickLink : la signaler séparément du contrôle catalogue.
 
 Exemple depuis la racine du dépôt :
 ```powershell

@@ -40,6 +40,7 @@ if __name__=='__main__':
     parser.add_argument('--studio',type=Path,default=audit_moc.DEFAULT_STUDIO)
     args=parser.parse_args()
     audit_moc.configure(args.studio)
+    audit_moc.mount_embedded(args.model)
     ps=parse(args.model)
     print('Heuristic only: misses clips, side connections, angled parts and unsupported stud variants; includes base parts.')
     for p,c in supports(ps):

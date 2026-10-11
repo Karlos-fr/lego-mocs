@@ -4,11 +4,42 @@ from functools import lru_cache
 import argparse
 import json
 import zipfile
+import tempfile
+from pathlib import PurePosixPath
 import numpy as np
 
 DEFAULT_STUDIO = Path('C:/Program Files/Studio 2.0')
 ROOT = DEFAULT_STUDIO / 'ldraw'
 LIBRARY_PATHS = {}
+CUSTOM_PATHS = {}
+_CUSTOM_TEMP = None
+
+def mount_embedded(source):
+    """Read DAT geometry bundled in a Studio archive without installing it."""
+    global _CUSTOM_TEMP, CUSTOM_PATHS
+    CUSTOM_PATHS = {}
+    if _CUSTOM_TEMP is not None: _CUSTOM_TEMP.cleanup()
+    _CUSTOM_TEMP = None
+    vertices.cache_clear()
+    if Path(source).suffix.lower() != '.io': return
+    with zipfile.ZipFile(source) as archive:
+        files = [i for i in archive.infolist() if i.filename.startswith('CustomParts/') and i.filename.lower().endswith('.dat')]
+        if not files: return
+        _CUSTOM_TEMP = tempfile.TemporaryDirectory(prefix='lego-custom-')
+        aliases = {}
+        for item in files:
+            relative = PurePosixPath(item.filename[len('CustomParts/'):])
+            if relative.is_absolute() or '..' in relative.parts or ':' in str(relative):
+                raise ValueError('Unsafe embedded geometry path')
+            path = Path(_CUSTOM_TEMP.name).joinpath(*relative.parts)
+            path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_bytes(archive.read(item))
+            CUSTOM_PATHS[str(relative).lower()] = path
+            if relative.parts[0] in ('p','s'):
+                CUSTOM_PATHS[str(PurePosixPath(*relative.parts[1:])).lower()] = path
+            aliases.setdefault(relative.name.lower(),[]).append(path)
+        for name, paths in aliases.items():
+            if len(paths)==1: CUSTOM_PATHS.setdefault(name,paths[0])
 
 def configure(studio=DEFAULT_STUDIO):
     global ROOT, LIBRARY_PATHS
@@ -26,6 +57,8 @@ def configure(studio=DEFAULT_STUDIO):
 
 def resolve(ref):
     ref = ref.replace('\\','/')
+    custom = CUSTOM_PATHS.get(ref.lower())
+    if custom is not None: return custom
     indexed = LIBRARY_PATHS.get(ref.lower())
     if indexed is not None and indexed.is_file():
         return indexed
@@ -115,6 +148,7 @@ def main():
     parser.add_argument('--studio',type=Path,default=DEFAULT_STUDIO)
     args=parser.parse_args()
     configure(args.studio)
+    mount_embedded(args.model)
     parts=parse(args.model)
     boxes=[bounds(p) for p in parts]
     lo=np.min([b[0] for b in boxes],axis=0)

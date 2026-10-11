@@ -2,6 +2,7 @@
 from functools import lru_cache
 from pathlib import Path
 import re
+import csv
 import numpy as np
 from PIL import Image
 import audit_moc
@@ -13,6 +14,13 @@ def load_colors():
     for line in (audit_moc.ROOT/'LDConfig.ldr').read_text().splitlines():
         m = re.search(r'CODE\s+(\d+)\s+VALUE\s+#([0-9A-Fa-f]{6})', line)
         if m: COLORS[int(m[1])] = tuple(bytes.fromhex(m[2]))
+    definition = audit_moc.ROOT.parent/'data/StudioColorDefinition.txt'
+    if definition.is_file():
+        with definition.open(encoding='utf-8-sig') as stream:
+            for row in csv.DictReader(stream,delimiter='\t'):
+                code, rgb = row['LDraw Color Code'], row['RGB value'].strip()
+                if code and rgb.startswith('#') and len(rgb)==7:
+                    COLORS.setdefault(int(code),tuple(bytes.fromhex(rgb[1:])))
 
 @lru_cache(None)
 def mesh(ref):
@@ -86,5 +94,6 @@ if __name__=='__main__':
     args=parser.parse_args()
     if args.size<200: parser.error('--size must be at least 200')
     audit_moc.configure(args.studio)
+    audit_moc.mount_embedded(args.model)
     output=args.output or args.model.with_name(args.model.stem+'_apercu.png')
     render(parse(args.model),output,view=args.view,size=(args.size,args.size))

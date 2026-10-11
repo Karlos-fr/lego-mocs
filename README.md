@@ -5,12 +5,12 @@ Modèles personnels créés avec BrickLink Studio, aperçus et outils de vérifi
 ## Modèles
 
 - [Île du Trésor Oublié](Ile_du_Tresor_Oublie/README.md) : petite île enneigée pour une ville de Noël.
-- [Mariah Noël](Mariah_Noel_V2_7_spots_fins_robe_restauree.io)
+- [Mariah Carey — scène de Noël](Mariah_Carey/README.md)
 - [Petite crèche](Petite_Creche_V2_2.io)
 - [Portail Nether](Portail_Nether_V4_Centre_Transparent.io)
 - [Wagon tombereau](Wagon_Tombereau_V2_1_Fond_Brun_Lisse.io)
 
-Les fichiers des quatre derniers modèles sont conservés tels quels ; leurs inventaires et leur constructibilité n'ont pas été audités ici.
+Le modèle Mariah Carey a été contrôlé : deux combinaisons pièce/couleur non répertoriées et un torse personnalisé sont détaillés dans son guide. Les trois autres modèles n'ont pas encore été audités ici.
 
 ## Île du Trésor
 
@@ -18,7 +18,7 @@ Ouvrir [Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.io). 
 
 ![Rendu Studio original de l'île](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.png)
 
-Le dossier conserve le modèle, cet aperçu, son guide ; les scripts utiles sont partag?s dans le skill. L'historique des versions précédentes et des anciens documents est disponible dans Git.
+Le dossier conserve le modèle, cet aperçu, son guide ; les scripts utiles sont partagés dans le skill. L'historique des versions précédentes et des anciens documents est disponible dans Git.
 
 Les contrôles locaux ont validé la cohérence des inventaires et fichiers internes avant le retrait des inventaires séparés. La validation native de stabilité/collision et la construction physique restent à confirmer.
 
@@ -38,4 +38,4 @@ python .agents/skills/lego-moc/scripts/audit_moc.py chemin/modele.io
 python .agents/skills/lego-moc/scripts/support_audit.py chemin/modele.io
 ```
 
-Les outils de géométrie lisent les IO/LDR/MPD et leurs sous-modèles. Les archives IO chiffrées et les pièces personnalisées absentes de la bibliothèque nécessitent un export compatible. Le contrôle d'inventaire BrickLink reste limité aux modèles plats. L'analyse des appuis est une aide à l'inspection, pas une validation native Studio.
+Les outils de géométrie lisent les IO/LDR/MPD, leurs sous-modèles et les DAT personnalisés embarqués dans les archives IO. Les archives IO chiffrées, textures et géométries absentes nécessitent un export compatible. Le contrôle d'inventaire BrickLink reste limité aux modèles plats standard. L'analyse des appuis est une aide à l'inspection, pas une validation native Studio.
