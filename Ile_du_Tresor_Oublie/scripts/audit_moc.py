@@ -5,7 +5,7 @@ import zipfile
 import numpy as np
 
 ROOT = Path(r'C:\Program Files\Studio 2.0\ldraw')
-SOURCE = Path('Ile_du_Tresor_Oublie_V3_2.io')
+SOURCE = Path(__file__).resolve().parent.parent / 'Ile_du_Tresor_Oublie_V3_6_bricklink.io'
 LIBRARY_PATHS = {}
 for line in (ROOT/'cachedLibraryPath_0.txt').read_text(encoding='utf-8-sig').splitlines():
     fields=line.split('\t')

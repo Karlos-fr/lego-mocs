@@ -35,6 +35,7 @@ def supports(ps):
 
 if __name__=='__main__':
     import sys
-    ps=parse(Path(sys.argv[1] if len(sys.argv)>1 else 'Ile_du_Tresor_Oublie_V3_4.io'))
+    from audit_moc import SOURCE
+    ps=parse(Path(sys.argv[1]) if len(sys.argv)>1 else SOURCE)
     for p,c in supports(ps):
         if not c:print('UNSUPPORTED',p['index'],p['section'],p['ref'],p['p'])

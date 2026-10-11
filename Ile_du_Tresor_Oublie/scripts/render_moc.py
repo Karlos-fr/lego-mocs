@@ -76,4 +76,4 @@ if __name__=='__main__':
     import sys
     from audit_moc import SOURCE
     source=Path(sys.argv[1]) if len(sys.argv)>1 else SOURCE
-    render(parse(source),source.stem+'_apercu.png')
+    render(parse(source),source.with_name(source.stem+'_apercu.png'))
