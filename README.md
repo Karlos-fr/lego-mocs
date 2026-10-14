@@ -14,9 +14,9 @@ Le modèle Mariah Carey a été amélioré et contrôlé : 187 pièces, visage e
 
 ## Île du Trésor
 
-Ouvrir [Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.io). Le modèle comprend **391 pièces et 76 combinaisons référence/couleur**, sur une base de 20 × 18 tenons. Ce IO comporte les correspondances BrickLink nécessaires à son import en Wanted List.
+Ouvrir [Ile_du_Tresor_Oublie.io](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.io). Le modèle comprend **415 pièces et 81 combinaisons référence/couleur**, sur une base de 20 × 18 tenons. Or en vrac dans le coffre, bonnet de Noël, poinsettias et guirlande suspendue ont été ajoutés. Ce IO comporte les correspondances BrickLink nécessaires à son import en Wanted List.
 
-![Rendu Studio original de l'île](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie.png)
+![Aperçu actuel de l'île](Ile_du_Tresor_Oublie/Ile_du_Tresor_Oublie_apercu.png)
 
 Le dossier conserve le modèle, cet aperçu, son guide ; les scripts utiles sont partagés dans le skill. L'historique des versions précédentes et des anciens documents est disponible dans Git.
 
