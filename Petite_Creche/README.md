@@ -4,9 +4,20 @@ Ouvrir **[Petite_Creche.io](Petite_Creche.io)** dans BrickLink Studio.
 
 ![Aperçu de la crèche corrigée](Petite_Creche_apercu.png)
 
-Le modèle corrigé contient **351 pièces et 108 combinaisons référence/couleur**. Tous les éléments sont visibles et disposent d'une géométrie locale résolue. L'agencement principal et l'encombrement du socle sont conservés. La version avant correction est disponible dans Git au commit `06e4819`.
+Le modèle corrigé contient **367 pièces et 120 combinaisons référence/couleur**. Tous les éléments sont visibles et disposent d'une géométrie locale résolue. L'agencement principal et l'encombrement du socle sont conservés. La version avant correction est disponible dans Git au commit `06e4819`.
 
 ## Corrections du 14 octobre 2026
+
+### Améliorations du décor
+
+- Toit habillé de planches brunes décalées, avec quelques nuances Dark Brown et une couverture de faîtage arrondie.
+- Étoile plus fine, Bright Light Yellow avec un petit centre doré ; support arrière raccourci et pointe longue orientée vers le bas.
+- Mangeoire et parents avancés pour mieux montrer le bébé. Rois disposés en arc ouvert, sur des fixations centrées, avec les offrandes à proximité.
+- Paille suggérée par des grilles Tan et lanterne noire à verre jaune translucide près de la mangeoire.
+- Chemin irrégulier, touches de terre et de pierre et végétation basse, sans agrandir le socle.
+- Poteaux affinés et traverse assemblée sous le toit. Âne retravaillé avec un corps plus fin, des yeux imprimés, des oreilles allongées et un museau arrondi.
+
+La version précédant ces améliorations reste disponible dans Git au commit `afc04dc`. Les 122 pièces du socle conservent exactement leurs placements, géométries et couleurs. Les vues avant et arrière ont été inspectées ; les nouveaux voisinages rois/poteaux et végétation/murets ont également été contrôlés avec les géométries locales. Ces vérifications restent partielles : les collisions et la stabilité natives Studio n'ont pas été validées.
 
 | Élément | Correction |
 |---|---|
@@ -25,9 +36,9 @@ Le torse noir `973pa2` est conservé : le [catalogue BrickLink des torses prése
 
 ## Contrôles réalisés
 
-- Archive ZIP intacte ; **351 placements identiques** entre `model.ldr`, `modelv2.ldr` et `model2.ldr` après conversion des références et couleurs. Aucun doublon exact.
+- Archive ZIP intacte ; **367 placements identiques** entre `model.ldr`, `modelv2.ldr` et `model2.ldr` après conversion des références et couleurs. Aucun doublon exact.
 - Contrôleur du skill exécuté sur **le modèle complet**, comparé au CSV et au XML de travail temporaires : couples référence/couleur et quantités identiques, pas seulement les totaux.
-- **102 des 108 combinaisons** sont attestées dans la table locale des éléments Studio. Les six autres sont les torses imprimés ci-dessous, attestés dans le catalogue BrickLink.
+- **114 des 120 combinaisons** sont attestées dans la table locale des éléments Studio. Les six autres sont les torses imprimés ci-dessous, attestés dans le catalogue BrickLink.
 - Toutes les géométries sont résolues ; plus aucun animal masqué ou référence DAT manquante. Aucun DAT personnalisé ni pièce flexible définie par des points de contrôle n'est ajouté.
 - Les **quatre capes textiles** sont prises en compte dans l'inventaire et le rendu sous leur représentation LDraw formée fixe `50231c01.dat`. Elles ne sont ni omises ni comptées comme plusieurs pièces. Leur forme souple réelle reste à ajuster lors du montage.
 - Connexions verticales des ajouts contrôlées avec les positions des tenons, connexions latérales des yeux et du museau de l'âne alignées. Les points les plus bas des pieds réels du mouton sont contenus dans la surface plane à la hauteur des tuiles.
