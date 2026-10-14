@@ -10,7 +10,7 @@ Modèles personnels créés avec BrickLink Studio, aperçus et outils de vérifi
 - [Portail Nether](Portail_Nether_V4_Centre_Transparent.io)
 - [Wagon tombereau](Wagon_Tombereau_V2_1_Fond_Brun_Lisse.io)
 
-Le modèle Mariah Carey a été amélioré et contrôlé : 187 pièces, visage et cheveux remplacés par des combinaisons catalogue, torse LEGO existant, pose de chant et décor rouge et doré. La petite crèche a été classée et auditée : 329 éléments, quatre combinaisons pièce/couleur non répertoriées et des correspondances restantes à confirmer. Les limites de validation sont détaillées dans leurs guides. Le portail Nether et le wagon n'ont pas encore été audités ici.
+Le modèle Mariah Carey a été amélioré et contrôlé : 187 pièces, visage et cheveux remplacés par des combinaisons catalogue, torse LEGO existant, pose de chant et décor rouge et doré. La petite crèche a été corrigée : 351 pièces, 108 combinaisons pièce/couleur attestées, mouton rétabli, âne en briques et correspondances BrickLink incluses dans le IO. Les limites de validation sont détaillées dans leurs guides. Le portail Nether et le wagon n'ont pas encore été audités ici.
 
 ## Île du Trésor
 

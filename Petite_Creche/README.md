@@ -1,66 +1,52 @@
 # Petite crèche
 
-Ouvrir **[Petite_Creche.io](Petite_Creche.io)** dans BrickLink Studio. Le fichier provient de `Petite_Creche_V2_2.io` : il a été déplacé et renommé **sans modifier son contenu**, ce qui a été vérifié par empreinte SHA-256.
+Ouvrir **[Petite_Creche.io](Petite_Creche.io)** dans BrickLink Studio.
 
-![Aperçu de la crèche](Petite_Creche_apercu.png)
+![Aperçu de la crèche corrigée](Petite_Creche_apercu.png)
 
-Le modèle contient **329 éléments et 99 combinaisons géométrie/couleur**. L'aperçu représente les **327 éléments visibles** ; le mouton et l'âne sont déjà masqués dans `modelv2.ldr`. L'encombrement des éléments rendus est d'environ **201,5 × 160 × 168,8 mm** (largeur, profondeur, hauteur) ; cette mesure inclut les décors et ne définit pas la taille du socle.
+Le modèle corrigé contient **351 pièces et 108 combinaisons référence/couleur**. Tous les éléments sont visibles et disposent d'une géométrie locale résolue. L'agencement principal et l'encombrement du socle sont conservés. La version avant correction est disponible dans Git au commit `06e4819`.
 
-## Contrôle du 14 octobre 2026
+## Corrections du 14 octobre 2026
 
-- Archive intacte, concordance exacte des 329 références, couleurs, positions et matrices entre `model.ldr` et `modelv2.ldr`.
-- Toutes les couleurs LDraw rencontrées ont une correspondance unique dans la table couleur Studio/BrickLink. Cela ne signifie pas que chaque pièce existe dans la couleur choisie.
-- Le fichier **ne contient pas de `model2.ldr`**, nécessaire à notre méthode d'export fiable des références et couleurs BrickLink. Aucun export d'achat corrigé n'a été ajouté au modèle lors de ce simple classement et audit.
-- Le contrôleur d'inventaire du skill a été exécuté sur une **projection temporaire explicitement limitée à 320 éléments standard / 91 combinaisons**, dotée d'un `model2.ldr` de contrôle. Inventaires et placements concordent, sans doublon sur cette projection. Ce résultat ne valide pas l'import du IO original ni les neuf éléments exclus.
-- **80 des 91 combinaisons standard** sont attestées dans la table locale des éléments Studio. Cinq autres sont attestées par le catalogue BrickLink : `973p4n` White, `973p4e` Red, `973pb1139` Dark Brown, `973pb0583` Dark Red et `973px86a` White. Quatre combinaisons sont non répertoriées ; deux demandent encore confirmation, comme détaillé ci-dessous.
-- Aperçus avant et arrière inspectés avec la géométrie réelle des éléments visibles. Les collisions, connexions et la stabilité natives Studio, ainsi que la construction physique, n'ont pas été validées.
+| Élément | Correction |
+|---|---|
+| Deux plaques 2 × 8 Dark Brown inexistantes | Chacune remplacée par deux plaques 2 × 4 `3020` Dark Brown. Enveloppe, épaisseur et positions des 16 tenons conservées pour chaque remplacement. |
+| Tête du roi en Reddish Brown | Impression remplacée par le sourire classique `3626p01`, géométrie `3626bp01.dat`, sans changer la couleur chair ni la pose. |
+| Tête de l'ange en Light Nougat | Remplacée par la tête féminine souriante `3626pb0635`, géométrie `3626cp0i.dat`, dans la même couleur chair. |
+| Bébé | Corps blanc `25128pb001`, géométrie `25126p01.dat`, avec mains jaunes moulées ; tête `24581pb01` passée en Yellow. Les deux éléments ont une correspondance catalogue vérifiée et conservent leur position dans la mangeoire. |
+| Couronne `71015` | Pearl Gold remplacé par Chrome Gold, couleur attestée pour cette référence. |
+| Quatre capes | Correspondance `50231c01.dat` → BrickLink `522` explicitement établie. Les capes Blue et Dark Red sont conservées ; la cape Dark Tan est passée en Light Bluish Gray, couleur attestée. |
+| Deux hanches | Correspondance `3815.dat` → BrickLink `970` confirmée, sans changer leur géométrie ou leurs placements. |
+| Mouton | Référence corrigée en `bl_74188pb01.dat`, puis rendu visible. Ses quatre pieds reposent sur quatre tuiles Tan 2 × 2 formant une petite surface plane. |
+| Âne | Référence sans géométrie `106470pb01.dat` retirée et remplacée par un **âne gris construit avec 17 pièces standard** : corps, tête, oreilles, yeux, museau et queue. Ses quatre appuis sont fixés sur les tenons du sol, près de l'emplacement prévu initialement. |
+| Import BrickLink | Ajout de `model2.ldr`, avec identifiants et couleurs BrickLink explicites ; `model.ldr` et `modelv2.ldr` conservent les identifiants et couleurs géométriques LDraw. |
 
-## Combinaisons à corriger
+Le torse noir `973pa2` est conservé : le [catalogue BrickLink des torses présents dans des sets en Black](https://www.bricklink.com/catalogList.asp?catID=150&catType=P&catXrefLevel=0&colorPart=11) atteste cette combinaison, malgré l'échec de lecture de sa fiche détaillée lors du premier contrôle.
 
-| Géométrie LDraw | Référence BrickLink | Couleur utilisée | Quantité | Constat catalogue |
-|---|---|---|---:|---|
-| 3034.dat | 3034 | Dark Brown (120) | 2 | Couleur absente des couleurs connues et des offres affichées sur la [fiche Plate 2 × 8](https://www.bricklink.com/v2/catalog/catalogitem.page?P=3034). Une ancienne entrée de guide de prix ne suffit pas à attester cette combinaison. |
-| 3626bp84.dat | 3626pb0628 | Reddish Brown (88) | 1 | Impression répertoriée en Yellow uniquement : [fiche tête](https://www.bricklink.com/v2/catalog/catalogitem.page?P=3626pb0628). |
-| 3626cp8q.dat | 3626pb1571 | Light Nougat (90) | 1 | Impression répertoriée en Yellow uniquement : [fiche tête féminine](https://www.bricklink.com/v2/catalog/catalogitem.page?P=3626pb1571). |
-| 24581p01.dat | 24581pb01 | Light Nougat (90) | 1 | Cette tête de bébé est répertoriée en Yellow uniquement : [fiche bébé](https://www.bricklink.com/v2/catalog/catalogitem.page?P=24581pb01). Une autre référence sera nécessaire pour une tête couleur chair. |
+## Contrôles réalisés
 
-Aucune substitution n'est appliquée : les personnages et la palette de référence sont conservés pour une éventuelle amélioration ultérieure.
+- Archive ZIP intacte ; **351 placements identiques** entre `model.ldr`, `modelv2.ldr` et `model2.ldr` après conversion des références et couleurs. Aucun doublon exact.
+- Contrôleur du skill exécuté sur **le modèle complet**, comparé au CSV et au XML de travail temporaires : couples référence/couleur et quantités identiques, pas seulement les totaux.
+- **102 des 108 combinaisons** sont attestées dans la table locale des éléments Studio. Les six autres sont les torses imprimés ci-dessous, attestés dans le catalogue BrickLink.
+- Toutes les géométries sont résolues ; plus aucun animal masqué ou référence DAT manquante. Aucun DAT personnalisé ni pièce flexible définie par des points de contrôle n'est ajouté.
+- Les **quatre capes textiles** sont prises en compte dans l'inventaire et le rendu sous leur représentation LDraw formée fixe `50231c01.dat`. Elles ne sont ni omises ni comptées comme plusieurs pièces. Leur forme souple réelle reste à ajuster lors du montage.
+- Connexions verticales des ajouts contrôlées avec les positions des tenons, connexions latérales des yeux et du museau de l'âne alignées. Les points les plus bas des pieds réels du mouton sont contenus dans la surface plane à la hauteur des tuiles.
+- Recherche de chevauchements importants des nouveaux éléments et inspection des vues avant et arrière avec leur géométrie réelle. Ces contrôles partiels ne remplacent pas la validation native des collisions et de la stabilité dans Studio.
 
-## Incertitudes restantes
+Les conversions de cape et de hanches ne sont pas déduites des numéros : le fichier LDraw local `522.dat` indique son remplacement par `50231c01`, et `3815.dat` indique son renommage depuis `970`. La [fiche BrickLink de la cape 522](https://www.bricklink.com/v2/catalog/catalogitem.page?C=11&P=522) liste également `50231` parmi ses références alternatives.
 
-- **Couronne 71015 en Pearl Gold (115)** : absente de la table locale et des couleurs connues de la [fiche couronne](https://www.bricklink.com/v2/catalog/catalogitem.page?P=71015&ccName=4100457&lang=Eng), malgré quelques offres affichées sous cette couleur. Une offre isolée ne prouve pas la combinaison ; variante ou couleur à confirmer.
-- **Torse 973pa2 en Black (11)** : non attesté dans la table locale ; la fiche détaillée BrickLink renvoie une erreur lors de ce contrôle. La référence existe au catalogue, mais sa couleur n'est pas validée ici.
-- **Quatre capes `50231c01.dat`**, en Blue, Dark Red (deux exemplaires) et Dark Tan : géométrie textile formée disponible, mais correspondance automatique BrickLink absente. Elles sont rendues et restent explicitement hors de la projection standard vérifiée.
-- **Deux hanches `3815.dat`**, en Red et Black : géométrie disponible, mais pas de référence BrickLink dans l'entrée locale exacte. L'alias de moule et la correspondance doivent être confirmés.
-- **Corps de bébé `25126.dat` blanc** : géométrie locale marquée « Needs Work », sans correspondance exacte dans la table. Les références décorées de corps de bébé existantes ne peuvent pas être substituées automatiquement.
-- **Mouton `74188pb01.dat` blanc et âne `106470pb01.dat` Light Bluish Gray** : deux placements masqués dans le fichier Studio ; leurs noms DAT ne se résolvent pas dans la bibliothèque utilisée. Le mouton possède un alias local `bl_74188pb01.dat`, mais aucune correction de référence ou de visibilité n'a été effectuée. L'[âne 106470pb01](https://www.bricklink.com/v2/catalog/catalogitem.page?ccName=6481725&id=241438&idColor=86) existe au catalogue ; cela ne fournit pas sa géométrie manquante.
+Les six combinaisons absentes de la table locale sont : [973p4n White](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973p4n), [973p4e Red](https://www.bricklink.com/catalogItemIn.asp?P=973p4e), [973pb1139 Dark Brown](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973pb1139), [973pb0583 Dark Red](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973pb0583), [973px86a White](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973px86a) et `973pa2 Black`, attesté par la page des torses noirs citée plus haut.
 
-Les confirmations complémentaires de torses proviennent des fiches [973p4n](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973p4n), [973p4e](https://www.bricklink.com/catalogItemIn.asp?P=973p4e), [973pb1139](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973pb1139), [973pb0583](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973pb0583) et [973px86a](https://www.bricklink.com/v2/catalog/catalogitem.page?P=973px86a).
+Sources consultées le 14 octobre 2026 ; leurs indexations datent du jour même à plusieurs mois selon les fiches. **Aucune combinaison pièce/couleur non attestée ne reste identifiée dans ce modèle corrigé.** Cela ne garantit pas les stocks, les quantités commandables, la livraison en France ou le résultat d'Easy Buy.
 
-Sources consultées le 14 octobre 2026, avec des indexations allant du jour même à plusieurs mois selon les fiches. Le contrôle porte sur les correspondances et couleurs catalogue, sans vérifier stocks commandables, quantités par vendeur, livraison en France ou résultat d'Easy Buy. Le modèle ne peut pas être déclaré entièrement achetable en l'état.
+L'import effectif dans une Wanted List, la validation native Studio des connexions/collisions/stabilité et la construction physique restent à confirmer. La correction d'achat est incluse directement dans le IO ; aucun inventaire séparé n'est nécessaire dans ce dossier.
 
 ## Régénérer l'aperçu
 
-Les scripts communs se trouvent dans `../.agents/skills/lego-moc/scripts/`. Pour ce modèle, le lecteur géométrique seul n'interprète pas les masques Studio : filtrer explicitement les deux éléments masqués avant le rendu, sans les supprimer du IO.
-
-Depuis ce dossier, avec Python, NumPy, Pillow et Studio installés :
+Depuis ce dossier, avec Python, NumPy, Pillow et la bibliothèque Studio installés :
 
 ```powershell
-@'
-import sys, zipfile
-from pathlib import Path
-sys.path.insert(0, '../.agents/skills/lego-moc/scripts')
-import audit_moc as a, render_moc as r
-source = Path('Petite_Creche.io')
-a.configure(); a.mount_embedded(source)
-parts = a.parse(source)
-with zipfile.ZipFile(source) as archive:
-    rows = [line.split() for line in archive.read('modelv2.ldr').decode('utf-8-sig').splitlines() if line.startswith('11 ')]
-assert len(rows) == len(parts)
-assert all(row[-1] == part['ref'] for row, part in zip(rows, parts))
-visible = [part for row, part in zip(rows, parts) if row[3] != 'True']
-r.render(visible, Path('Petite_Creche_apercu.png'))
-'@ | python -
+python ../.agents/skills/lego-moc/scripts/render_moc.py Petite_Creche.io
 ```
 
-Le rendu simplifie les matériaux et l'éclairage, et n'ajoute aucun texte. Les inventaires de travail, vues arrière et projections de contrôle restent temporaires ; aucun script propre à ce projet n'est ajouté.
+Le script générique peut désormais lire et rendre tout le modèle directement. Le rendu utilise la géométrie réelle, avec des matériaux simplifiés et sans texte ajouté. Les inventaires temporaires et vues de contrôle ne sont pas conservés dans le dossier.
