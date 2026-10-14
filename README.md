@@ -6,11 +6,11 @@ Modèles personnels créés avec BrickLink Studio, aperçus et outils de vérifi
 
 - [Île du Trésor Oublié](Ile_du_Tresor_Oublie/README.md) : petite île enneigée pour une ville de Noël.
 - [Mariah Carey — scène de Noël](Mariah_Carey/README.md)
-- [Petite crèche](Petite_Creche_V2_2.io)
+- [Petite crèche](Petite_Creche/README.md)
 - [Portail Nether](Portail_Nether_V4_Centre_Transparent.io)
 - [Wagon tombereau](Wagon_Tombereau_V2_1_Fond_Brun_Lisse.io)
 
-Le modèle Mariah Carey a été amélioré et contrôlé : 187 pièces, visage et cheveux remplacés par des combinaisons catalogue, torse LEGO existant, pose de chant et décor rouge et doré. Les limites de validation sont détaillées dans son guide. Les trois autres modèles n'ont pas encore été audités ici.
+Le modèle Mariah Carey a été amélioré et contrôlé : 187 pièces, visage et cheveux remplacés par des combinaisons catalogue, torse LEGO existant, pose de chant et décor rouge et doré. La petite crèche a été classée et auditée : 329 éléments, quatre combinaisons pièce/couleur non répertoriées et des correspondances restantes à confirmer. Les limites de validation sont détaillées dans leurs guides. Le portail Nether et le wagon n'ont pas encore été audités ici.
 
 ## Île du Trésor
 
